@@ -1,0 +1,3 @@
+{
+  "/travelInfo/:id": "/travelInfo?id=:id"
+}
