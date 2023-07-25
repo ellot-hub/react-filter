@@ -26,7 +26,7 @@ const Product: React.FunctionComponent<ProductProps> = ({data, isLoading, isErro
                                     </div>
                                     <div className="Product__info--bottom">
                                         <span className="Product__price">
-                                            {travel.price.toLocaleString() + "원 "}
+                                            {travel.discountPercent > 0 ? (travel.price - (travel.price * (travel.discountPercent / 100))).toLocaleString() + "원 " : travel.price.toLocaleString() + "원 "}
                                             {travel.discountPercent > 0 ? `(-${travel.discountPercent}%)` : ``}
                                         </span>
                                         <span className="Product__etc">
