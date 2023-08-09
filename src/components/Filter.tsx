@@ -28,7 +28,7 @@ const Filter: React.FunctionComponent<FilterProps> = ({list, showClear, onAddFil
                                 style={{
                                     backgroundColor:
                                         item.active === "active" ?
-                                            "#00b8ff" : "#fff",
+                                            "#75c2f6" : "#fff",
                                     color:
                                         item.active === "active" ?
                                             "#fff" : "#000"
