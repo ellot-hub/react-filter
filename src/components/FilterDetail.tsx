@@ -24,7 +24,7 @@ const FilterDetail: React.FunctionComponent<FilterDetailsProps> = ({data, onFilt
                                     style={{
                                         backgroundColor:
                                             activeData[index] === "active"
-                                                ? "#00b8ff"
+                                                ? "#75c2f6"
                                                 : "#fff",
                                         color:
                                             activeData[index] === "active"

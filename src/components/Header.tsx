@@ -8,7 +8,16 @@ const Header = () => {
     return (
         <>
             <div className="Header">
-                <span className="Header__Title">{pageName}</span>
+                <div className="Header__Title">
+                    <span className="Header__PageName">{pageName}</span>
+                </div>
+                <input type="checkbox" id="toggle" hidden />
+                <label
+                    htmlFor="toggle"
+                    className="Header__Toggle"
+                >
+                    <span className="Header__Button"></span>
+                </label>
             </div>
         </>
     );
