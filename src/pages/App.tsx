@@ -10,6 +10,7 @@ import FilterDetail from "components/FilterDetail";
 
 import {BrowserRouter, Navigate, Routes, Route} from "react-router-dom";
 import useFilter from "hooks/useFilter";
+import { RecoilRoot } from "recoil";
 
 const App: React.FunctionComponent = () => {
     const {
@@ -28,40 +29,42 @@ const App: React.FunctionComponent = () => {
     } = useFilter();
 
     return (
-    <div className="App">
-        <BrowserRouter>
-            <Header />
-            <Filter
-                list={filters}
-                showClear={showClearAll}
-                onAddFilter={handleAddFilter}
-                onRemoveFilter={handleRemoveFilter}
-                onClearAll={handleClearAll}
-            />
-            {
-                showDetail === true ?
-                    <FilterDetail
-                        data={filterDetails}
-                        onFilter={handleFilterDetail}
-                        onPopupClose={handleFilterDetailClose}
+        <RecoilRoot>
+            <div className="App">
+                <BrowserRouter>
+                    <Header />
+                    <Filter
+                        list={filters}
+                        showClear={showClearAll}
+                        onAddFilter={handleAddFilter}
+                        onRemoveFilter={handleRemoveFilter}
+                        onClearAll={handleClearAll}
                     />
-                    : <></>
-            }
-            <Routes>
-                <Route
-                    path="/list"
-                    element={
-                        <Product
-                            data={travels}
-                            isLoading={loading}
-                            isError={error}
-                        />
+                    {
+                        showDetail === true ?
+                            <FilterDetail
+                                data={filterDetails}
+                                onFilter={handleFilterDetail}
+                                onPopupClose={handleFilterDetailClose}
+                            />
+                            : <></>
                     }
-                />
-                <Route path="*" element={<Navigate to="/list" replace />} />
-            </Routes>
-        </BrowserRouter>
-    </div>
+                    <Routes>
+                        <Route
+                            path="/list"
+                            element={
+                                <Product
+                                    data={travels}
+                                    isLoading={loading}
+                                    isError={error}
+                                />
+                            }
+                        />
+                        <Route path="*" element={<Navigate to="/list" replace />} />
+                    </Routes>
+                </BrowserRouter>
+            </div>
+        </RecoilRoot>
   );
 }
 
