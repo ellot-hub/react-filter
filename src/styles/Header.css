@@ -39,11 +39,11 @@
     background: #F4D160 ;
 }
 /* 체크박스가 체크되면 변경 이벤트 */
-#toggle:checked ~ .Header__Toggle {
+#darkMode:checked ~ .Header__Toggle {
     background: #F4D160 ;
 }
 
-#toggle:checked ~ .Header__Toggle .Header__Button {
+#darkMode:checked ~ .Header__Toggle .Header__Button {
     left: calc(100% - 27px);
     background: #fff;
 }
