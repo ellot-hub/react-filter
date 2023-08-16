@@ -1,4 +1,4 @@
-import "styles/Header.css";
+import {HeaderPos, HeaderTitle} from "styles/Header";
 import {useLocation} from "react-router-dom";
 import {useRecoilState} from "recoil";
 import {darkModeState} from "state/Atom";
@@ -14,10 +14,10 @@ const Header = () => {
 
     return (
         <>
-            <div className="Header">
-                <div className="Header__Title">
-                    <span className="Header__PageName">{pageName}</span>
-                </div>
+            <HeaderPos>
+                <HeaderTitle>
+                    <span>{pageName}</span>
+                </HeaderTitle>
                 <input type="checkbox" id="darkMode" hidden defaultChecked={darkMode} />
                 <label
                     htmlFor="darkMode"
@@ -28,7 +28,7 @@ const Header = () => {
                 >
                     <span className="Header__Button"></span>
                 </label>
-            </div>
+            </HeaderPos>
         </>
     );
 }
