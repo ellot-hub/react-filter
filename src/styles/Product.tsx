@@ -25,7 +25,6 @@ export const ProductImage = styled.img`
     display: block;
     width: 100%;
     height: auto;
-    src: ${(props) => props.src}
 `
 export const ProductInfo = styled.div`
     width: 100%;
