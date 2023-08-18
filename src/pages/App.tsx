@@ -1,9 +1,9 @@
 import React from 'react';
 
-import "styles/App.css";
+import GlobalStyle from "styles/Global";
 
-import Header from "components/Header"
-import Product from "components/Product"
+import Header from "components/Header";
+import Product from "components/Product";
 import Filter from "components/Filter";
 
 import FilterDetail from "components/FilterDetail";
@@ -30,6 +30,7 @@ const App: React.FunctionComponent = () => {
 
     return (
         <RecoilRoot>
+            <GlobalStyle />
             <div className="App">
                 <BrowserRouter>
                     <Header />

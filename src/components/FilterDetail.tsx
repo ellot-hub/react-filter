@@ -1,4 +1,4 @@
-import "styles/FilterDetail.css";
+import {DetailBox, DetailBoxClose, DetailItem, DetailList, DetailPos} from "styles/FilterDetail";
 import close from "assets/btn_close.svg";
 import {FilterDetailsProps, iFilterDetail} from "interfaces/Interface";
 
@@ -8,18 +8,16 @@ const FilterDetail: React.FunctionComponent<FilterDetailsProps> = ({data, onFilt
 
     return (
         <>
-            <div className="FilterDetail">
-                <div className="FilterDetail__box">
-                    <img
-                        className="FilterDetail__box--close"
+            <DetailPos>
+                <DetailBox>
+                    <DetailBoxClose
                         src={close}
                         onClick={onPopupClose}
                     />
-                    <ul className="FilterDetail__list">
+                    <DetailList>
                         {
                             data.list.map((item, index) => (
-                                <li
-                                    className="FilterDetail__list--item"
+                                <DetailItem
                                     key={index}
                                     style={{
                                         backgroundColor:
@@ -38,12 +36,12 @@ const FilterDetail: React.FunctionComponent<FilterDetailsProps> = ({data, onFilt
                                     }
                                 >
                                     {item}
-                                </li>
+                                </DetailItem>
                             ))
                         }
-                    </ul>
-                </div>
-            </div>
+                    </DetailList>
+                </DetailBox>
+            </DetailPos>
         </>
     );
 }

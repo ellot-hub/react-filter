@@ -1,14 +1,13 @@
-import "styles/Filter.css";
+import {FilterItem, FilterList, FilterPos} from "styles/Filter";
 import close from "assets/btn_close.svg";
 import {FilterProps} from "interfaces/Interface";
 
 const Filter: React.FunctionComponent<FilterProps> = ({list, showClear, onAddFilter, onRemoveFilter, onClearAll}) => {
     return (
         <>
-            <div className="Filter">
-                <ul className="Filter__list">
-                    <li
-                        className="Filter__list--item"
+            <FilterPos>
+                <FilterList>
+                    <FilterItem
                         style={{
                             display:
                                 showClear ?
@@ -21,10 +20,10 @@ const Filter: React.FunctionComponent<FilterProps> = ({list, showClear, onAddFil
                         }
                     >
                         초기화
-                    </li>
+                    </FilterItem>
                     {
                         list && list.map((item, index) => (
-                            <li className="Filter__list--item"
+                            <FilterItem
                                 style={{
                                     backgroundColor:
                                         item.active === "active" ?
@@ -54,11 +53,11 @@ const Filter: React.FunctionComponent<FilterProps> = ({list, showClear, onAddFil
                                         }
                                     }
                                 />
-                            </li>
+                            </FilterItem>
                         ))
                     }
-                </ul>
-            </div>
+                </FilterList>
+            </FilterPos>
         </>
     );
 }
